@@ -4,215 +4,261 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bubble Bay | Carwash & Salon Lounge</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+<style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat', sans-serif;
+  scroll-behavior:smooth;
 }
 
 body {
-  background: #0f172a;
-  color: #f1f5f9;
+  background:#0f172a;
+  color:#fff;
+  overflow-x:hidden;
 }
 
 section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
+  padding:100px 8%;
 }
 
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg,#0f172a,#1e293b);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1607863680198-23d4b2565dfb?auto=format&fit=crop&w=1500&q=80');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
 .hero h1 {
-  font-size: 48px;
-  animation: fadeDown 1s ease;
+  font-size:55px;
+  font-weight:800;
+  letter-spacing:2px;
+  animation:fadeDown 1s ease;
 }
 
 .hero p {
-  margin-top: 20px;
-  font-size: 20px;
-  opacity: 0.8;
-  animation: fadeUp 1.2s ease;
+  margin-top:20px;
+  font-size:22px;
+  opacity:0.85;
+  animation:fadeUp 1.3s ease;
 }
 
-.btn-group {
-  margin-top: 30px;
+.cta {
+  margin-top:40px;
 }
 
 .btn {
-  padding: 14px 28px;
-  margin: 10px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  padding:15px 35px;
+  margin:10px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.4s;
+  display:inline-block;
 }
 
-.btn-primary {
-  background: #38bdf8;
-  color: #000;
+.btn-blue {
+  background:#38bdf8;
+  color:#000;
 }
 
-.btn-secondary {
-  background: #f472b6;
-  color: #000;
+.btn-pink {
+  background:#f472b6;
+  color:#000;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform:scale(1.08);
 }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 30px;
+.split {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:60px;
 }
 
-.card {
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 20px;
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(40px);
+.split img {
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  background: #334155;
+.split div {
+  flex:1;
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
+  font-size:40px;
+  margin-bottom:25px;
+}
+
+.card-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card {
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  padding:30px;
+  border-radius:20px;
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(60px);
+}
+
+.card.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover {
+  transform:translateY(-10px);
+}
+
+.pricing {
+  background:#1e293b;
+  border-radius:25px;
+  padding:40px;
+}
+
+.pricing h3 {
+  margin-bottom:20px;
+}
+
+.pricing ul {
+  list-style:none;
+}
+
+.pricing li {
+  margin:8px 0;
+  display:flex;
+  justify-content:space-between;
 }
 
 .testimonials {
-  background: #1e293b;
-  border-radius: 20px;
-  padding: 40px;
-}
-
-.testimonial {
-  margin-bottom: 20px;
-}
-
-.map iframe {
-  width: 100%;
-  height: 400px;
-  border-radius: 20px;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 16px;
-  border-radius: 50%;
-  font-size: 22px;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-@keyframes fadeDown {
-  from {opacity:0; transform:translateY(-40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
+  background:#111827;
+  border-radius:25px;
+  padding:50px;
 }
 
 footer {
   text-align:center;
-  padding:40px;
+  padding:50px;
   background:#0f172a;
-  opacity:0.7;
+  opacity:0.6;
 }
 
+.whatsapp {
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:18px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.whatsapp:hover {
+  transform:scale(1.1);
+}
+
+@keyframes fadeDown {
+  from{opacity:0; transform:translateY(-50px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp {
+  from{opacity:0; transform:translateY(50px);}
+  to{opacity:1; transform:translateY(0);}
+}
 </style>
 </head>
+
 <body>
 
 <section class="hero">
-  <h1>Relax While We Make You Shine</h1>
+  <h1>Bubble Bay Experience</h1>
   <p>Premium Carwash & Salon Lounge in Randburg</p>
-  <div class="btn-group">
-    <a href="https://wa.me/27634999673" class="btn btn-primary">Book Carwash</a>
-    <a href="https://wa.me/27634999673" class="btn btn-secondary">Book Salon</a>
+  <div class="cta">
+    <a href="https://wa.me/27634999673" class="btn btn-blue">Book Carwash</a>
+    <a href="https://wa.me/27634999673" class="btn btn-pink">Book Salon</a>
+  </div>
+</section>
+
+<section class="split">
+  <div>
+    <h2>🚗 Carwash Excellence</h2>
+    <p>Exterior wash, interior vacuum, full valet and a fresh scent finish. Safe environment, relaxed seating and not overcrowded.</p>
+  </div>
+  <div>
+    <img src="https://images.unsplash.com/photo-1621584115193-47a9c7fa8b9a?auto=format&fit=crop&w=1000&q=80">
+  </div>
+</section>
+
+<section class="split">
+  <div>
+    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1000&q=80">
+  </div>
+  <div>
+    <h2>💇 Salon Lounge</h2>
+    <p>Professional braids, styling, beauty treatments and more. Relax while your car gets washed. Two services. One location.</p>
   </div>
 </section>
 
 <section>
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>🚗 Carwash Services</h3>
-      <p>Exterior Wash<br>Interior Vacuum<br>Full Valet<br>Fresh Scent Finish</p>
-    </div>
-    <div class="card">
-      <h3>💇 Salon Lounge</h3>
-      <p>Hair Styling<br>Braids<br>Nails<br>Beauty Treatments</p>
-    </div>
-    <div class="card">
-      <h3>✨ Why Choose Us</h3>
-      <p>Safe Environment<br>Relaxing Seating Area<br>Friendly Staff<br>Not Overcrowded</p>
-    </div>
+  <h2>Salon Pricing Highlights</h2>
+  <div class="pricing">
+    <ul>
+      <li><span>Knotless Braids (Medium)</span><span>R550</span></li>
+      <li><span>Goddess Braids (Medium)</span><span>R600</span></li>
+      <li><span>Straight Up</span><span>R300</span></li>
+      <li><span>Wig Installation</span><span>From R250</span></li>
+    </ul>
   </div>
 </section>
 
 <section>
   <h2>What Customers Say</h2>
   <div class="testimonials">
-    <div class="testimonial">⭐ “My car smells and feels new.”</div>
-    <div class="testimonial">⭐ “Safe to leave your car and relax.”</div>
-    <div class="testimonial">⭐ “Excellent service and friendly staff.”</div>
+    <p>⭐ "My car smells and feels new."</p>
+    <p>⭐ "Safe to leave your car and relax."</p>
+    <p>⭐ "Excellent service and friendly staff."</p>
   </div>
 </section>
 
-<section class="map">
+<section>
   <h2>Find Us</h2>
   <iframe 
-    src="https://www.google.com/maps?q=22+Harley+Street,+Randburg&output=embed">
+    src="https://www.google.com/maps?q=22+Harley+Street,+Randburg&output=embed"
+    width="100%" height="400" style="border-radius:20px; border:none;">
   </iframe>
 </section>
 
 <footer>
-  © 2026 Bubble Bay | Built by Tanda Tech
+Demo Website Preview | Built by Tanda Tech
 </footer>
 
-<a href="https://wa.me/27634999673" class="whatsapp-float">💬</a>
+<a href="https://wa.me/27634999673" class="whatsapp">💬</a>
 
 <script>
 const cards = document.querySelectorAll('.card');
-
 window.addEventListener('scroll', () => {
   cards.forEach(card => {
     const position = card.getBoundingClientRect().top;
